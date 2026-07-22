@@ -1,0 +1,27 @@
+export const MODEL_SLUGS = [
+  'plaza-paving-01',
+  'grass-verge-01',
+  'road-straight-01',
+  'road-corner-01',
+  'road-intersection-01',
+  'road-t-01',
+  'sidewalk-01',
+  'street-tree-01',
+  'flower-planter-01',
+  'shop-awning-01',
+  'corner-store-01',
+  'apartment-block-01',
+  'glass-skyscraper-01',
+  'convenience-store-01',
+  'traffic-light-01',
+  'street-lamp-01',
+  'bus-shelter-01',
+  'bench-01',
+  'trash-bin-01',
+  'street-sign-01',
+  'car-sedan-01',
+  'taxi-01',
+  'sky-day-dome-01',
+] as const
+
+export type ModelSlug = (typeof MODEL_SLUGS)[number]
