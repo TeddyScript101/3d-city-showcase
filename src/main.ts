@@ -177,7 +177,10 @@ loadAllModels().then((models) => {
 
   ground.scale.set(citySpan * 3, citySpan * 3, 1)
 
-  const cameraDistance = citySpan * 0.9
+  // Mobile screens are narrower, so the default framing crops more of the
+  // city into view; pull the camera back further to compensate.
+  const isMobile = window.innerWidth <= 768
+  const cameraDistance = citySpan * (isMobile ? 1.35 : 0.9)
   camera.position.set(cameraDistance, cameraDistance * 0.7, cameraDistance)
   camera.far = cameraDistance * 10
   camera.updateProjectionMatrix()
