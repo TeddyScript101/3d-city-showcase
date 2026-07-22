@@ -90,8 +90,11 @@ cameraButtons.forEach((button) => {
     } else if (mode === 'follow') {
       controls.enabled = false
       followMode = true
+    } else if (mode === 'free') {
+      camera.position.copy(defaultCameraPosition)
+      controls.target.copy(defaultTarget)
     }
-    // 'free' leaves autoRotate off and controls enabled: fully static until dragged.
+    // 'free' resets to the default overview position, then stays fully static until dragged.
   })
 })
 
