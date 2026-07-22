@@ -59,6 +59,9 @@ controls.target.set(0, 0, 0)
 controls.enableDamping = true
 controls.autoRotate = true
 controls.autoRotateSpeed = 0.6
+// Stop just short of the horizon so the camera can never dip below ground
+// level and look up at the underside of the city.
+controls.maxPolarAngle = Math.PI / 2 - 0.05
 
 const director = new CameraDirector()
 
