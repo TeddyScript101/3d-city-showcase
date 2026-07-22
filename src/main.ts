@@ -18,6 +18,10 @@ app.innerHTML = `
     <h1>3D City Showcase</h1>
     <p>Drag to rotate &middot; scroll to zoom &middot; switch camera mode top-left</p>
   </div>
+  <div id="loading-overlay">
+    <div class="spinner"></div>
+    <p>Loading city&hellip;</p>
+  </div>
 `
 const canvas = document.querySelector<HTMLCanvasElement>('#scene')!
 
@@ -156,6 +160,8 @@ function animate() {
 animate()
 
 loadAllModels().then((models) => {
+  document.querySelector<HTMLDivElement>('#loading-overlay')?.remove()
+
   const {
     citySpan,
     vehicles: cityVehicles,
